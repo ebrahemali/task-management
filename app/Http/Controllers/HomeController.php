@@ -39,10 +39,7 @@ class HomeController extends Controller
         $projects = Project::get();
         return view('projects', compact('projects'));
     }
-    /* public function addtask()
-     {
-         return view('add-task');
-     }*/
+    
     public function profile()
     {
         if (!Auth::check()) {
@@ -52,11 +49,11 @@ class HomeController extends Controller
         $user = Auth::user();
         $projects = $user->projects()->distinct()->get();
         $tasks = $user->tasks;
-    
+
         return view('profile', compact('user', 'projects', 'tasks'));
     }
 }
-  
+
     public function taskslist()
     {
         
