@@ -36,7 +36,7 @@
                                                     <td>{{$task->description}}</td>
                                                     <td>{{$task->due_date}}</td>
                                                     <td> <a class="btn btn-outline-primary"
-                                                            href="{{ route('tasks.edit', $task->id) }}">Edit Profile</a>
+                                                            href="{{ route('tasks.edit', $task->id) }}">Edit task</a>
                                                     </td>
                                                     <td>
                                                         <form method="POST"

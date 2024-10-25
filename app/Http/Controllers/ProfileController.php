@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Validator;
-
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Storage;
@@ -53,7 +52,7 @@ use Illuminate\Support\Facades\Hash;
             // تخزين الصورة في مجلد storage/app/public/profile_pictures
             $profilePicture = request()->file('profile_picture')->store('profile_pictures', 'public');
         }
-        return User::create([
+        User::create([
             'name' => $request['name'],
             'email' => $request['email'],
             'job' => $request['job'],
@@ -71,9 +70,8 @@ use Illuminate\Support\Facades\Hash;
 
         ]);
         $profiles = User::all();
-
-        return view('profiles', compact('profiles'));
-    }
+        return redirect()->route('profiles.index', compact('profiles'));
+     }
 
 
     public function show($id)
