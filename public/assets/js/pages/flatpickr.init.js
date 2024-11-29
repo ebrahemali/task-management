@@ -1,1 +1,0 @@
-flatpickr("#task-due-date");
